@@ -76,5 +76,24 @@ public class AccountTest {
         } );
 
     }
+    @Test
+    @DisplayName( "Should instance account with null values " )
+    public void shouldInstanceAccountWithNullValues(){
 
+            Account acc = new Account();
+
+            assertThat( acc ).hasAllNullFieldsOrProperties();
+            assertThat( acc ).isNotNull();
+
+    }
+    @Test
+    @DisplayName( "Should instance account with not null values " )
+    public void shouldInstanceAccountWithNotNullValues(){
+
+        Account acc = new Account(1L, 800.00);
+
+        assertThat( acc ).hasNoNullFieldsOrProperties();
+        assertThat( acc ).isNotNull();
+
+    }
 }
